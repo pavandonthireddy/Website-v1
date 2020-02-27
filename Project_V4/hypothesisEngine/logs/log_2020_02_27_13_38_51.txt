@@ -1,0 +1,41 @@
+Start:	2020-02-27 13:38:51.331941
+Grammar: <expr>  ::= (<foptr>(<expr>,<expr>,<day>))| 
+                                                    (<fopbi>(<expr>,<day>))| 
+                                                    (<fopun>(<expr>))| 
+                                                    (<expr><matbi><expr>)  |
+                                                    <var>
+                                        <foptr> ::= corr | covariance
+                                        <fopbi> ::= mean | 
+                                                    median |   
+                                                    stdev| 
+                                                    back_diff| 
+                                                    center| 
+                                                    compress| 
+                                                    scale| 
+                                                    normalize_o|       
+                                                    zscore|     
+                                                    sma|
+                                                    ema| 
+                                                    fisher_norm| 
+                                                    maxval| 
+                                                    minval|       
+                                                    gauss_filter|
+                                                    ts_rank|
+                                                    skew|
+                                                    kurtosis
+                                        <fopun> ::= fisher|invfisher|rank| -1* | 1/ |smooth
+                                        <matbi> ::= + | - | * | /
+                                        <var> ::= Open|High|Low|Close
+                                        <day> ::=  5 | 10 | 15 | 20
+Hey
+4511470de812aa4c8cdc0ff85048957b
+-1.711	 : (High+Close)
+-1.612	 : (ema(Close,20))
+-1.59	 : (mean(Open,10))
+-1.542	 : (minval(Low,10))
+-0.748	 : (covariance(Close,Open,5))
+-1.635	 : (mean(High,20))
+0.391	 : (Low/High)
+-0.833	 : (covariance(Low,Close,5))
+0.081	 : (fisher(High))
+-1.463	 : ((High*Close)-(High*Low))
